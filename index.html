@@ -19,8 +19,19 @@
                 ])
             }
         }
-        
+
         m.mount(root, Hello)
+
+        var Splash = {
+            view: function() {
+                return m("a", {href: "#!/hello"}, "Enter!")
+            }
+        }
+
+        m.route(root, "/splash", {
+            "/splash": Splash,
+            "/hello": Hello,
+        })
     </script>
 
     <!-- HTML syntax via Babel's JSX plugin -->
